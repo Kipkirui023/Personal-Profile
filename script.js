@@ -1,6 +1,23 @@
+const menuIcon = document.getElementById('menu');
+const navLinks = document.getElementById('nav-links');
+
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+// Automatically hide nav on link click (mobile only)
+const links = navLinks.querySelectorAll('a');
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            navLinks.classList.remove('show');
+        }
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     var typed = new Typed(".namet", {
-      strings: ["KIPKURUI", "LANGAT", "LABAN"],
+      strings: ["KIPKURUI ", "LANGAT ", "LABAN "],
       typeSpeed: 100,
       backSpeed: 50,
       backDelay: 1000,
