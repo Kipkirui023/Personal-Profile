@@ -128,9 +128,13 @@ nav ul a:hover {
     padding: 8rem 10% 4rem;
     gap: 3rem;
 }
+.home-container {
+    flex-shrink: 0;
+    max-width: 30%;
+}
 #home img {
     width: 100%;
-    max-width: 40%;
+    max-width: 400px;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--color);
     transition: all 0.3s ease;
@@ -146,7 +150,7 @@ nav ul a:hover {
     font-weight: 600;
 }
 .info-box {
-    max-width: 100%;
+    max-width: 600px;
 }
 .info-box h1{
     font-size: 2em;
@@ -190,7 +194,7 @@ nav ul a:hover {
 .about-img img {
     width: 100%;
     height: auto;
-    max-width: 100%;
+    max-width: 70%;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
@@ -365,7 +369,6 @@ section {
     text-align: center;
     color: #6cff52;
 }
-
 .container1{
     margin-top: 2em;
     width: 50%;
