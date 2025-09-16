@@ -734,23 +734,30 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 textarea {
     resize: vertical;
     min-height: 100px;
-    max-height: 200px;
+    max-height: 110px;
 }
 
-input[type="submit"] {
-    background-color: #a9b2b3;
-    cursor: pointer;
-    transition: background 0.3s;
+button, input[type="submit"]{
+    background-color: #22474b;
+    color: white;                  /* make text visible */
+    padding: 0.8em 1.5em;          /* spacing */
+    border: none;                  /* clean border */
+    border-radius: 0.5em;          /* rounded corners */
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;         /* ensure visible */
 }
 
-input[type="submit"]:hover {
-    background-color: #44dbe6;
+button:hover, input[type="submit"]:hover, .btn:hover {
+    background-color: #047e86;
 }
+
 
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
-        padding: 1em;
+        padding: 0.7em;
     }
 }
 
