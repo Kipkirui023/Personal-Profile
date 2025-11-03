@@ -34,7 +34,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1rem 8%;
+    padding: 0.3rem 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -615,66 +615,92 @@ section {
     opacity: 0;
 }
 
-/*---------------------Projects-------------*/
-#projects{
-    padding: 3px 0;
+/*----- Projects Section -----*/
+#projects {
+    padding: 60px 0;
 }
-.container{
-    padding: 10px 10%;
 
+.projects-container {
+    width: 90%;
+    margin: auto;
 }
-.sub-title{
+
+.section-title {
     text-align: center;
     color: #6cff52;
-    font-size: 2em;
+    font-size: 2.2em;
+    font-weight: bold;
 }
-.services-list{
+
+/* Grid */
+.projects-grid {
+    margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2em;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.3rem;
 }
-.sub-container .btn{
-    align-items: center;
-    background-color: darkorange;
-    font-size: 0.8em;
+
+/* Uniform Card Size */
+.project-card {
+    background: #0a333f;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    transition: .4s;
+    height: 300px;  /* fixed height ✅ */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.sub-container img{
-    border-radius: 10px;
+
+.project-card img {
     width: 100%;
-    height: auto;
-}
-.services-list div{
-    background: #f5dcdc;
-    padding: 10px 30px;
-    font-size: 1em;
-    font-weight: 350;
-    border-radius: 15px;
-    transition: background 0.5s, transform 0.5s;
-}
-.services-list div i{
-    font-size: 1.5em;
-    margin-bottom: 30px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
-.services-list h2{
-font-size: 30px;
-font-weight: 500;
-margin-bottom: 10px;
+/* Text Control */
+.project-card p {
+    font-size: 0.8em;
+    height: 55px; /* limit text ✅ */
+    overflow: hidden;
 }
 
-.services-list a{
-    text-decoration: solid;
-    color: aqua;
-    font-size: 10px;
-    margin-top: 15px;
-    display: inline-block;
+/* Buttons */
+.project-card .btn,
+.load-more {
+    background-color: darkorange;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.75em;
+    text-decoration: none;
+    font-weight: 600;
+}
 
+.project-card:hover {
+    background: #0f7e88;
+    transform: translateY(-8px);
 }
-.services-list div:hover{
-    background: #0f7e88 ;
-    transform: translateY(-10px);
+
+.project-card:hover .btn {
+    background-color: #fff;
+    color: #0f7e88;
 }
+
+/* Hide Extra Cards */
+.project-card.hidden {
+    display: none;
+}
+
+/* Load More Center */
+.load-more {
+    margin: 20px auto 0;
+    display: block;
+    cursor: pointer;
+}
+
 
 /*------contact section styling------*/
 #contact {

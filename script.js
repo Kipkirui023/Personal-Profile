@@ -46,3 +46,44 @@ document.addEventListener("DOMContentLoaded", function () {
         el.style.opacity = 1;
     });
 });
+
+
+document.querySelector("form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        phone: this.phone.value,
+        message: this.message.value
+    };
+
+    const response = await fetch("http://localhost:3000/contact", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+    });
+
+    const result = await response.text();
+    alert(result);
+});
+
+const cards = document.querySelectorAll('.project-card');
+let visibleCards = 6; // Show first 6 initially
+
+cards.forEach((card, i) => {
+    if (i >= visibleCards) card.classList.add('hidden');
+});
+
+document.getElementById('loadMoreBtn').addEventListener('click', () => {
+    visibleCards += 3; // Show 3 more each time
+    cards.forEach((card, i) => {
+        if (i < visibleCards) card.classList.remove('hidden');
+    });
+
+    if (visibleCards >= cards.length) {
+        document.getElementById('loadMoreBtn').style.display = 'none';
+    }
+});
